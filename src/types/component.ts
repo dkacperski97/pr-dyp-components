@@ -1,7 +1,9 @@
+import Props from "./props";
+
 type Component = {
     id: string;
     options: any[];
-    component: React.FC;
+    component: React.FC<Props>;
     template: string;
 }
 
