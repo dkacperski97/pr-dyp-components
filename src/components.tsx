@@ -9,16 +9,6 @@ import section from './components/section';
 import main from './components/main';
 import Component from './types/component';
 
-const components: Component[] = [
-  main,
-  grid,
-  link,
-  form,
-  chart,
-  section,
-  list,
-  label,
-  custom,
-];
+const components: Component[] = [main, grid, link, form, chart, section, list, label, custom];
 
 export default components;
