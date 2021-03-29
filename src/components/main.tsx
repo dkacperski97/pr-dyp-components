@@ -1,17 +1,12 @@
 import React from 'react';
 import Component from '../types/component';
-import { useDrop } from 'react-dnd';
 import Props from '../types/props';
+import DropTarget from './helpers/DropTarget';
 
 const Main: React.FC<Props> = ({ children, setChild }) => {
-	const [, drop] = useDrop(() => ({
-		accept: 'component',
-		drop: (item: any) => setChild(item.id, 0),
-	}));
-
 	return (
-		<div style={{ height: '40px' }} ref={drop}>
-			{children}
+		<div>
+			{children?.[0] || <DropTarget index={0} setChild={setChild} />}
 		</div>
 	);
 };
