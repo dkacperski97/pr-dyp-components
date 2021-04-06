@@ -1,9 +1,10 @@
-import Props from './props';
-
+type Option = {
+	name: string;
+}
 type Component = {
 	id: string;
-	options: any[];
-	component: React.FC<Props>;
+	options: Option[];
+	component: () => Promise<any>;
 	template: string;
 };
 

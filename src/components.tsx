@@ -1,12 +1,12 @@
-import chart from './components/chart';
-import custom from './components/custom';
-import form from './components/form';
-import grid from './components/grid';
-import label from './components/label';
-import link from './components/link';
-import list from './components/list';
-import section from './components/section';
-import main from './components/main';
+import chart from './components/chartComponent';
+import custom from './components/customComponent';
+import form from './components/formComponent';
+import grid from './components/gridComponent';
+import label from './components/labelComponent';
+import link from './components/linkComponent';
+import list from './components/listComponent';
+import section from './components/sectionComponent';
+import main from './components/mainComponent';
 import Component from './types/component';
 
 const components: Component[] = [main, grid, link, form, chart, section, list, label, custom];

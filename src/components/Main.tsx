@@ -1,5 +1,4 @@
 import React from 'react';
-import Component from '../types/component';
 import Props from '../types/props';
 import DropTarget from './helpers/DropTarget';
 
@@ -11,11 +10,4 @@ const Main: React.FC<Props> = ({ children, setChild }) => {
 	);
 };
 
-const main: Component = {
-	id: 'main',
-	options: [],
-	component: Main,
-	template: '',
-};
-
-export default main;
+export default Main;

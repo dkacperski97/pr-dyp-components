@@ -1,5 +1,4 @@
 import React from 'react';
-import Component from '../types/component';
 import Props from '../types/props';
 import DropTarget from './helpers/DropTarget';
 import { makeStyles } from '@material-ui/core/styles';
@@ -27,11 +26,4 @@ const Grid: React.FC<Props> = ({ children, setChild }) => {
 	);
 };
 
-const grid: Component = {
-	id: 'grid',
-	options: [],
-	component: Grid,
-	template: '',
-};
-
-export default grid;
+export default Grid;

@@ -1,5 +1,4 @@
 import React from 'react';
-import Component from '../types/component';
 import Props from '../types/props';
 import MuiList from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -20,11 +19,4 @@ const List: React.FC<Props> = () => {
 	);
 };
 
-const list: Component = {
-	id: 'list',
-	options: [],
-	component: List,
-	template: '',
-};
-
-export default list;
+export default List;
