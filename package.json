@@ -24,10 +24,17 @@
     "@material-ui/icons": "^4.11.2",
     "@types/material-ui": "^0.21.8",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
     "react-dnd": "^14.0.2",
-    "react-dnd-html5-backend": "^14.0.0"
+    "react-dnd-html5-backend": "^14.0.0",
+    "react-dom": "^17.0.2"
   },
+	"files": [
+		"dist",
+		"src",
+    "components",
+    "types/props",
+    "types/component"
+	],
   "preconstruct": {
     "entrypoints": [
       "index.ts",
