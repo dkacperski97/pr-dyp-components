@@ -1,77 +1,39 @@
 {
-	"version": "0.1.0",
-	"license": "MIT",
-	"main": "dist/index.js",
-	"typings": "dist/index.d.ts",
-	"files": [
-		"dist",
-		"src"
-	],
-	"engines": {
-		"node": ">=10"
-	},
-	"scripts": {
-		"start": "tsdx watch",
-		"build": "tsdx build",
-		"test": "tsdx test --passWithNoTests",
-		"lint": "tsdx lint",
-		"fix": "tsdx lint src test --fix",
-		"prepare": "tsdx build",
-		"size": "size-limit",
-		"analyze": "size-limit --why"
-	},
-	"peerDependencies": {
-		"react": "^17.0.2"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "tsdx lint"
-		}
-	},
-	"prettier": {
-		"printWidth": 100,
-		"tabWidth": 4,
-		"useTabs": true,
-		"semi": true,
-		"singleQuote": true,
-		"quoteProps": "as-needed",
-		"jsxSingleQuote": false,
-		"trailingComma": "es5",
-		"bracketSpacing": true,
-		"jsxBracketSameLine": false,
-		"arrowParens": "always",
-		"endOfLine": "lf"
-	},
-	"name": "components",
-	"author": "Damian Kacperski",
-	"module": "dist/components.esm.js",
-	"size-limit": [
-		{
-			"path": "dist/components.cjs.production.min.js",
-			"limit": "10 KB"
-		},
-		{
-			"path": "dist/components.esm.js",
-			"limit": "10 KB"
-		}
-	],
-	"devDependencies": {
-		"@size-limit/preset-small-lib": "^4.10.1",
-		"@types/react": "^17.0.3",
-		"@types/react-dom": "^17.0.3",
-		"husky": "^5.2.0",
-		"react": "*",
-		"react-dom": "^17.0.2",
-		"size-limit": "^4.10.1",
-		"tsdx": "^0.14.1",
-		"tslib": "^2.1.0",
-		"typescript": "^3.9.9"
-	},
-	"dependencies": {
-		"@material-ui/core": "^4.11.3",
-		"@material-ui/icons": "^4.11.2",
-		"@types/material-ui": "^0.21.8",
-		"react-dnd": "^14.0.2",
-		"react-dnd-html5-backend": "^14.0.0"
-	}
+  "name": "component",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/component.cjs.js",
+  "module": "dist/component.esm.js",
+  "scripts": {
+    "start": "preconstruct dev",
+    "build": "preconstruct build",
+    "fix": "preconstruct fix",
+    "validate": "preconstruct validate",
+    "watch": "preconstruct watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Damian Kacperski",
+  "devDependencies": {
+    "@babel/preset-react": "^7.13.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@preconstruct/cli": "^2.0.6",
+    "typescript": "^4.2.3"
+  },
+  "peerDependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@types/material-ui": "^0.21.8",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-dnd": "^14.0.2",
+    "react-dnd-html5-backend": "^14.0.0"
+  },
+  "preconstruct": {
+    "entrypoints": [
+      "index.ts",
+      "components.ts",
+      "types/props.ts",
+      "types/component.ts"
+    ]
+  }
 }
