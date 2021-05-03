@@ -31,16 +31,12 @@
 	"files": [
 		"dist",
 		"src",
-    "components",
-    "types/props",
-    "types/component"
+    "types/*"
 	],
   "preconstruct": {
     "entrypoints": [
       "index.ts",
-      "components.ts",
-      "types/props.ts",
-      "types/component.ts"
+      "types/*.ts"
     ]
   }
 }

@@ -2,9 +2,10 @@ import React from 'react';
 import InputLabel from '@material-ui/core/InputLabel';
 import Props from '../types/props';
 
-const Label: React.FC<Props> = () => {
+const Label: React.FC<Props> = ({ config }) => {
+	const { name } = config;
 	return (
-        <InputLabel>Name</InputLabel>
+        <InputLabel>{name}</InputLabel>
 	);
 };
 

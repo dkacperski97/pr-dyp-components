@@ -1,6 +1,8 @@
+export type SetChild = (componentId: string, index: number) => void;
+
 type Props = {
-	config: any[];
-	setChild: (componentId: string, index: number) => void;
+	config: any;
+	setChild: SetChild;
 	children: (React.ReactNode | undefined)[];
 };
 
