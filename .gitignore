@@ -1,4 +1,4 @@
-components/
-types/
-dist/
-node_modules/
+/components/
+/types/
+/dist/
+/node_modules/

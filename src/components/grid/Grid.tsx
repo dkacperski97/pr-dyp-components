@@ -1,5 +1,5 @@
 import React from 'react';
-import Props from '../types/props';
+import Props from '../../types/props';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({

@@ -1,4 +1,4 @@
-import Component, { ComponentType } from '../types/component';
+import Component, { ComponentType } from '../../types/component';
 
 const list: Component = {
 	id: 'list',

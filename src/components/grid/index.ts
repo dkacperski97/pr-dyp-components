@@ -1,4 +1,4 @@
-import Component, { ComponentType, ComponentTypeAll } from '../types/component';
+import Component, { ComponentType, ComponentTypeAll } from '../../types/component';
 
 const template = `
 import React from 'react';
