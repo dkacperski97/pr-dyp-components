@@ -1,4 +1,4 @@
-import Component from '../types/component';
+import Component, { ComponentType, ComponentTypeAll } from '../types/component';
 
 const template = `
 import React from 'react';
@@ -25,9 +25,11 @@ export default Grid;
 
 const grid: Component = {
 	id: 'grid',
+	type: ComponentType.Layout,
 	options: [
 		{ id: 'amount', name: 'Number of columns', type: 'number', default: 3 },
 	],
+	getChildrenTypes: (config) => Array(config['amount']).fill(ComponentTypeAll),
 	component: () => import('./Grid'),
 	template
 };

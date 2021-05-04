@@ -1,4 +1,4 @@
-import Component from '../types/component';
+import Component, { ComponentType } from '../types/component';
 
 const template = `
 import React from 'react';
@@ -22,6 +22,7 @@ export default Link;
 
 const link: Component = {
 	id: 'link',
+	type: ComponentType.Common,
 	options: [
 		{ id: 'name', name: 'Link name', type: 'text', default: 'Link text' },
 		{ id: 'url', name: 'Destination address', type: 'text' },

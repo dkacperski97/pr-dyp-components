@@ -1,4 +1,4 @@
-import Component from '../types/component';
+import Component, { ComponentType } from '../types/component';
 
 const template = `
 import React from 'react';
@@ -15,6 +15,7 @@ export default Label;
 
 const label: Component = {
 	id: 'label',
+	type: ComponentType.Common,
 	options: [
 		{ id: 'name', name: 'Label name', type: 'text', default: 'Label text' },
 	],

@@ -1,7 +1,8 @@
-import Component from '../types/component';
+import Component, { ComponentType } from '../types/component';
 
 const form: Component = {
 	id: 'form',
+	type: ComponentType.Common,
 	options: [],
 	component: () => import('./Grid'),
 	template: '',

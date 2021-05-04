@@ -1,4 +1,4 @@
-import Component from '../types/component';
+import Component, { ComponentType, ComponentTypeAll } from '../types/component';
 
 const template = `
 import React from 'react';
@@ -14,6 +14,8 @@ export default Main;
 
 const main: Component = {
 	id: 'main',
+	type: ComponentType.Hidden,
+	getChildrenTypes: () => [ ComponentTypeAll ],
 	options: [],
 	component: () => import('./Main'),
 	template
