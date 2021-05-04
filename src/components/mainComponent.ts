@@ -16,8 +16,8 @@ const main: Component = {
 	id: 'main',
 	type: ComponentType.Hidden,
 	getChildrenTypes: () => [ ComponentTypeAll ],
-	options: [],
-	component: () => import('./Main'),
+	getOptions: () => [],
+	getComponent: () => import('./Main'),
 	template
 };
 

@@ -23,11 +23,11 @@ export default Link;
 const link: Component = {
 	id: 'link',
 	type: ComponentType.Common,
-	options: [
+	getOptions: () => [
 		{ id: 'name', name: 'Link name', type: 'text', default: 'Link text' },
 		{ id: 'url', name: 'Destination address', type: 'text' },
 	],
-	component: () => import('./Link'),
+	getComponent: () => import('./Link'),
 	template
 };
 

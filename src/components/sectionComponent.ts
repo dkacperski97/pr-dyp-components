@@ -3,8 +3,8 @@ import Component, { ComponentType } from '../types/component';
 const section: Component = {
 	id: 'section',
 	type: ComponentType.Common,
-	options: [],
-	component: () => import('./Grid'),
+	getOptions: () => [],
+	getComponent: () => import('./Grid'),
 	template: '',
 };
 

@@ -1,3 +1,6 @@
+import React from "react";
+import Props from "./props";
+
 type OptionType = { // TODO
 	text: String,
 	textarea: String,
@@ -23,8 +26,8 @@ type Component = {
 	id: string;
 	type: ComponentTypeValues;
 	getChildrenTypes?: (config: any) => (ComponentTypeValues | ComponentTypeValues[])[],
-	options: Option[];
-	component: () => Promise<any>;
+	getOptions: (config: any) => Option[];
+	getComponent: () => Promise<{ default: React.FC<Props> }>;
 	template: string;
 };
 

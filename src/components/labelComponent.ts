@@ -16,10 +16,10 @@ export default Label;
 const label: Component = {
 	id: 'label',
 	type: ComponentType.Common,
-	options: [
+	getOptions: () => [
 		{ id: 'name', name: 'Label name', type: 'text', default: 'Label text' },
 	],
-	component: () => import('./Label'),
+	getComponent: () => import('./Label'),
 	template
 };
 
