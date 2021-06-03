@@ -3,16 +3,14 @@ import Component, { ComponentType } from '../../types/component';
 const template = `
 import React from 'react';
 import Button from '@material-ui/core/Button';
+<%- getImports(config) %>
 
-const Link: React.FC = () => {
+const Link: React.FC<<%- getProps(config) %>> = (props) => {
+	<%- getVariables(config) %>
+
 	return (
-		<Button
-			variant="contained"
-			<% if (typeof config.url !== undefined) { %>
-			href="<%= config.url %>"
-			<% } %>
-		>
-			<%= config.name %>
+		<Button variant="contained" href={url}>
+			{value}
 		</Button>
 	)
 }
@@ -23,11 +21,8 @@ export default Link;
 const link: Component = {
 	id: 'link',
 	type: ComponentType.Common,
-	getOptions: () => [
-		{ id: 'name', name: 'Link name', type: 'text', default: 'Link text' },
-		{ id: 'url', name: 'Destination address', type: 'text' },
-	],
 	getComponent: () => import('./Link'),
+	getOptions: () => import('./LinkOptions'),
 	template
 };
 

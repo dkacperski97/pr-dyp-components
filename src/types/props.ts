@@ -1,6 +1,15 @@
-type Props = {
-	config: any;
+import { ISiteConfig } from "./site";
+
+export type Props = {
+	// config: any;
 	children: (React.ReactNode | undefined)[];
 };
 
-export default Props;
+export type SetSite = (site: (prev: ISiteConfig) => ISiteConfig) => void;
+
+export type OptionsProps = {
+	site: ISiteConfig;
+	setSite: SetSite;
+	componentId: string;
+	variableId: string;
+}

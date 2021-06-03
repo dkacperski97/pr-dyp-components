@@ -6,7 +6,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 
 const Label: React.FC = () => {
 	return (
-        <InputLabel><%= config.name %></InputLabel>
+        <InputLabel><%- config.name %></InputLabel>
 	);
 };
 
@@ -16,9 +16,7 @@ export default Label;
 const label: Component = {
 	id: 'label',
 	type: ComponentType.Common,
-	getOptions: () => [
-		{ id: 'name', name: 'Label name', type: 'text', default: 'Label text' },
-	],
+	getOptions: () => import('./LabelOptions'),
 	getComponent: () => import('./Label'),
 	template
 };

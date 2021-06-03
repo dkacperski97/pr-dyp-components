@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     },
 });
 
-const Grid: React.FC = ({ children }) => {
+const Flexbox: React.FC = ({ children }) => {
     const classes = useStyles();
 
 	return (
@@ -20,18 +20,16 @@ const Grid: React.FC = ({ children }) => {
 	);
 };
 
-export default Grid;
+export default Flexbox;
 `
 
-const grid: Component = {
-	id: 'grid',
+const flexbox: Component = {
+	id: 'flexbox',
 	type: ComponentType.Layout,
-	getOptions: () => [
-		{ id: 'amount', name: 'Number of columns', type: 'number', default: 3 },
-	],
+	getComponent: () => import('./Flexbox'),
+	getOptions: () => import('./FlexboxOptions'),
 	getChildrenTypes: (config) => Array(config['amount']).fill(ComponentTypeAll),
-	getComponent: () => import('./Grid'),
 	template
 };
 
-export default grid;
+export default flexbox;

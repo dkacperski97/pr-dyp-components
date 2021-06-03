@@ -1,5 +1,5 @@
 import React from 'react';
-import Props from '../../types/props';
+import { Props } from '../../types/props';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     },
 });
 
-const Grid: React.FC<Props> = ({ children }) => {
+const Flexbox: React.FC<Props> = ({ children }) => {
     const classes = useStyles();
 	
 	return (
@@ -20,4 +20,4 @@ const Grid: React.FC<Props> = ({ children }) => {
 	);
 };
 
-export default Grid;
+export default Flexbox;

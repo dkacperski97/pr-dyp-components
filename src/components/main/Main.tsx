@@ -1,5 +1,5 @@
 import React from 'react';
-import Props from '../../types/props';
+import { Props } from '../../types/props';
 
 const Main: React.FC<Props> = ({ children }) => {
 	return (

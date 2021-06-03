@@ -1,17 +1,7 @@
 import React from "react";
-import Props from "./props";
+import { Props, OptionsProps } from "./props";
+import { IVariable } from "./variable";
 
-type OptionType = { // TODO
-	text: String,
-	textarea: String,
-	number: Number
-}
-type Option = {
-	id: string;
-	name: string;
-	type: keyof OptionType;
-	default?: string|number;
-}
 export const ComponentType = {
 	Hidden: "Hidden",
 	Layout: "Layout",
@@ -22,13 +12,28 @@ export const ComponentTypeAll = [ComponentType.Hidden, ComponentType.Layout, Com
 type ComponentTypeKeys = keyof typeof ComponentType;
 type ComponentTypeValues = typeof ComponentType[ComponentTypeKeys];
 
+export interface IComponentConfig {
+	id: string;
+	name: string;
+	templateId: string;
+	variables: IVariable[];
+	options: any;
+	children: string[];
+}
+
+type Option = {
+	id: string;
+	type: string;
+	default?: IVariable;
+}
+
 type Component = {
 	id: string;
 	type: ComponentTypeValues;
-	getChildrenTypes?: (config: any) => (ComponentTypeValues | ComponentTypeValues[])[],
-	getOptions: (config: any) => Option[];
 	getComponent: () => Promise<{ default: React.FC<Props> }>;
-	template: string;
+	getOptions: Option[];
+	getChildrenTypes?: (config: any) => (ComponentTypeValues | ComponentTypeValues[])[],
+	getTemplate: () => string;
 };
 
 export default Component;

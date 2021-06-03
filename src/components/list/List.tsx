@@ -1,5 +1,5 @@
 import React from 'react';
-import Props from '../../types/props';
+import { Props } from '../../types/props';
 import MuiList from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';

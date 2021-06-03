@@ -1,14 +1,21 @@
-import chart from './components/chart';
+import image from './components/image';
 import custom from './components/custom';
 import form from './components/form';
-import grid from './components/grid';
+import flexbox from './components/flexbox';
 import label from './components/label';
 import link from './components/link';
 import list from './components/list';
 import section from './components/section';
 import main from './components/main';
+import page from './components/page';
+import numberInput from './components/numberInput';
+import prop from './hooks/prop';
+import routes from './hooks/routes';
+import text from './hooks/text';
+import number from './hooks/number';
+import customHook from './hooks/custom';
 import Component from './types/component';
+import Hook from './types/hook';
 
-const components: Component[] = [main, grid, link, form, chart, section, list, label, custom];
-
-export default components;
+export const components: Component[] = [main, flexbox, link, form, image, section, list, label, custom, page, numberInput];
+export const hooks: Hook[] = [prop, routes, text, number, customHook];
