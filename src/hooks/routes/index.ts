@@ -7,10 +7,10 @@ const getRouteObjectString = (r) => "{ url: '" + r.url + "', component: <" + hel
 import React from 'react';
 <%- hook.templateParameters.routes.map(r => site.components.find(c => c.id === r.component)).map(c => helpers.getComponentImport(c, pathToComponents)).join('') %>
 
-const useRoutes: any = (..._: any[]) => {
-    return [
+const useRoutes = (..._: any[]) => {
+	return React.useState([
 <%- hook.templateParameters.routes.map(getRouteObjectString).join('') %>
-    ];
+    ]);
 };
 
 export default useRoutes;

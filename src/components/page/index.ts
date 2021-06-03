@@ -5,11 +5,13 @@ import React from 'react';
 <%- helpers.getComponentsImports(site, component, pathToComponents) %>
 <%- helpers.getVariablesImports(site, component, pathToHooks) %>
 
-const Page: React.FC = () => {
-<%- helpers.getVariables(site, component) %>
+const Page: React.FC = (props = {}) => {
+	<%- helpers.getVariables(site, component) %>
 
 	return (
-        
+        <>
+			<%- helpers.getComponents(site, component) %>
+		</>
 	);
 };
 

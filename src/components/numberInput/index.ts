@@ -3,13 +3,17 @@ import Component, { ComponentType, ComponentTypeAll } from '../../types/componen
 const getTemplate = () => `
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import { Props } from '../../types/props';
+<%- helpers.getVariablesImports(site, component, pathToHooks) %>
 
-const NumberInput: React.FC<Props> = (props) => {
+const NumberInput: any = (props: any) => {
+    <%- helpers.getVariables(site, component) %>
+
 	return (
         <TextField
-            label="Number"
+            label={<%- helpers.getOption(site, component, 'label') %>}
             type="number"
+            value={<%- helpers.getOption(site, component, 'value') %>}
+            onChange={(e) => <%- helpers.getOptionSetter(site, component, 'value') %>(e.target.value)}
         />
 	);
 };
@@ -23,7 +27,6 @@ const numberInput: Component = {
     getOptions: [
         { id: "value", type: "number" },
         { id: "label", type: "string" },
-		{ id: "onChange", type: "function" }
     ],
 	getComponent: () => import('./NumberInput'),
 	getTemplate
