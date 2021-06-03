@@ -4,7 +4,7 @@ const getTemplate = () => `
 import React from 'react';
 
 const useNumber: any = (..._: any[]) => {
-    const numberState = useState<number>(<%- hook.templateParameters.number %>);
+    const numberState = React.useState<number>(<%- hook.templateParameters.number %>);
     return numberState;
 };
 

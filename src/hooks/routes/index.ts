@@ -5,7 +5,7 @@ const getTemplate = () => `
 const getRouteObjectString = (r) => "{ url: '" + r.url + "', component: <" + helpers.getComponentName(site.components.find(c => c.id === r.component)) + " /> }, \\n"
 %>
 import React from 'react';
-<%- hook.templateParameters.routes.map(r => site.components.find(c => c.id === r.component)).map(c => helpers.getComponentImport(c, '../')).join('') %>
+<%- hook.templateParameters.routes.map(r => site.components.find(c => c.id === r.component)).map(c => helpers.getComponentImport(c, pathToComponents)).join('') %>
 
 const useRoutes: any = (..._: any[]) => {
     return [

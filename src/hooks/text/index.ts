@@ -4,7 +4,7 @@ const getTemplate = () => `
 import React from 'react';
 
 const useText: any = (..._: any[]) => {
-    const textState = useState<string>(<%- hook.templateParameters.text %>);
+    const textState = React.useState<string>(<%- hook.templateParameters.text %>);
     return textState;
 };
 

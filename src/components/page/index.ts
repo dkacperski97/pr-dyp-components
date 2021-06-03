@@ -2,8 +2,12 @@ import Component, { ComponentType } from '../../types/component';
 
 const getTemplate = () => `
 import React from 'react';
+<%- helpers.getComponentsImports(site, component, pathToComponents) %>
+<%- helpers.getVariablesImports(site, component, pathToHooks) %>
 
 const Page: React.FC = () => {
+<%- helpers.getVariables(site, component) %>
+
 	return (
         
 	);
