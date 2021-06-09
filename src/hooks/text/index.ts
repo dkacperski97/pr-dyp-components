@@ -3,7 +3,7 @@ import Hook from '../../types/hook';
 const getTemplate = () => `
 import React from 'react';
 
-const useText: any = (..._: any[]) => {
+const useText: any = (props: any, variables: any) => {
     const textState = React.useState<string>("<%- hook.templateParameters.text %>");
     return textState;
 };

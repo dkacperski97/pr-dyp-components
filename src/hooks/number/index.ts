@@ -3,7 +3,7 @@ import Hook from '../../types/hook';
 const getTemplate = () => `
 import React from 'react';
 
-const useNumber: any = (..._: any[]) => {
+const useNumber: any = (props: any, variables: any) => {
     const numberState = React.useState<number>(<%- hook.templateParameters.number %>);
     return numberState;
 };

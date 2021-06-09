@@ -8,7 +8,7 @@ const v = c.variables.find((v) => v.id === hook.templateParameters.variable)
 %>
 import React from 'react';
 
-const useProp: any = (props: any, ..._: any[]) => {
+const useProp: any = (props: any, variables: any) => {
 	const {<%- helpers.getVariable(v) %>} = props;
 	return [<%- helpers.getVariable(v) %>];
 };

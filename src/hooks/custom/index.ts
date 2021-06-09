@@ -3,7 +3,7 @@ import Hook from '../../types/hook';
 const getTemplate = () => `
 import React from 'react';
 
-const useCustom: any = (..._: any[]) => {
+const useCustom: any = (props: any, variables: any) => {
 <%- hook.templateParameters.code %>
 };
 
