@@ -4,3 +4,8 @@ export interface IVariable {
     templateId?: string;
     templateParameters?: any;
 }
+
+export interface IVariableDraft {
+    templateId?: string;
+    templateParameters?: any;
+}

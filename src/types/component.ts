@@ -1,6 +1,6 @@
 import React from "react";
 import { Props, OptionsProps } from "./props";
-import { IVariable } from "./variable";
+import { IVariable, IVariableDraft } from "./variable";
 
 export const ComponentType = {
 	Hidden: "Hidden",
@@ -24,7 +24,7 @@ export interface IComponentConfig {
 type Option = {
 	id: string;
 	type: string;
-	default?: IVariable;
+	default?: IVariableDraft;
 }
 
 type Component = {

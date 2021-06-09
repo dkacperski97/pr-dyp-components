@@ -25,8 +25,8 @@ const numberInput: Component = {
 	id: 'numberInput',
 	type: ComponentType.Common,
     getOptions: [
-        { id: "value", type: "number" },
-        { id: "label", type: "string" },
+        { id: "value", type: "number", default: { templateId: 'number', templateParameters: { number: 0 } } },
+        { id: "label", type: "string", default: { templateId: 'text', templateParameters: { text: 'Label text' } } },
     ],
 	getComponent: () => import('./NumberInput'),
 	getTemplate
