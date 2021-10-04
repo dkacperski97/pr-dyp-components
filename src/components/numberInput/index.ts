@@ -5,7 +5,7 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 <%- helpers.getVariablesImports(site, component, pathToHooks) %>
 
-const NumberInput: any = (props: any) => {
+const <%- helpers.getComponentName(component) %>: any = (props: any) => {
     <%- helpers.getVariables(site, component) %>
 
 	return (
@@ -18,7 +18,7 @@ const NumberInput: any = (props: any) => {
 	);
 };
 
-export default NumberInput;
+export default <%- helpers.getComponentName(component) %>;
 `
 
 const numberInput: Component = {
