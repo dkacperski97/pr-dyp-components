@@ -10,6 +10,7 @@ const <%- helpers.getComponentName(component) %>: any = (props: any) => {
 
 	return (
         <TextField
+            className={<%- helpers.getOption(site, component, 'styles') %>}
             label={<%- helpers.getOption(site, component, 'label') %>}
             type="number"
             value={<%- helpers.getOption(site, component, 'value') %>}
@@ -25,6 +26,12 @@ const numberInput: Component = {
 	id: 'numberInput',
 	type: ComponentType.Common,
     getOptions: [
+        { id: "styles", type: "styles", default: { templateId: 'styles', templateParameters: { 
+            alignment: null, formats: [], background: null, backgroundColor: '#fff',
+            marginLeft: 0, marginTop: 0, marginRight: 0, marginBottom: 0, 
+            paddingLeft: 0, paddingTop: 0, paddingRight: 0, paddingBottom: 0, 
+            borderStyle: 'none', borderWidth: '1', borderColor: '#fff'
+        } } },
         { id: "value", type: "number", default: { templateId: 'number', templateParameters: { number: 0 } } },
         { id: "label", type: "string", default: { templateId: 'text', templateParameters: { text: 'Label text' } } },
     ],

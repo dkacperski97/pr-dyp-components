@@ -14,8 +14,10 @@ import routes from './hooks/routes';
 import text from './hooks/text';
 import number from './hooks/number';
 import customHook from './hooks/custom';
+import siteContext from './hooks/siteContext';
+import styles from './hooks/styles';
 import Component from './types/component';
 import Hook from './types/hook';
 
 export const components: Component[] = [main, flexbox, link, form, image, section, list, label, custom, page, numberInput];
-export const hooks: Hook[] = [prop, routes, text, number, customHook];
+export const hooks: Hook[] = [prop, routes, text, number, customHook, siteContext, styles];
