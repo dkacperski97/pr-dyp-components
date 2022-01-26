@@ -30,7 +30,6 @@ type Option = {
 type Component = {
 	id: string;
 	type: ComponentTypeValues;
-	getComponent: () => Promise<{ default: React.FC<Props> }>;
 	getOptions: Option[];
 	getChildrenTypes?: (config: any) => (ComponentTypeValues | ComponentTypeValues[])[],
 	getTemplate: () => string;

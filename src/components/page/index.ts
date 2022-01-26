@@ -5,7 +5,7 @@ import React from 'react';
 <%- helpers.getComponentsImports(site, component, pathToComponents) %>
 <%- helpers.getVariablesImports(site, component, pathToHooks) %>
 
-const Page: React.FC = (props = {}) => {
+const <%- helpers.getComponentName(component) %>: React.FC<any> = (props = {}) => {
 	<%- helpers.getVariables(site, component) %>
 
 	return (
@@ -15,14 +15,13 @@ const Page: React.FC = (props = {}) => {
 	);
 };
 
-export default Page;
+export default <%- helpers.getComponentName(component) %>;
 `
 
 const page: Component = {
 	id: 'page',
 	type: ComponentType.Hidden,
 	getOptions: [],
-	getComponent: () => import('./Page'),
 	getTemplate
 };
 

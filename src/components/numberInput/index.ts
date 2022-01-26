@@ -1,11 +1,11 @@
-import Component, { ComponentType, ComponentTypeAll } from '../../types/component';
+import Component, { ComponentType } from '../../types/component';
 
 const getTemplate = () => `
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 <%- helpers.getVariablesImports(site, component, pathToHooks) %>
 
-const <%- helpers.getComponentName(component) %>: any = (props: any) => {
+const <%- helpers.getComponentName(component) %>: React.FC<any> = (props) => {
     <%- helpers.getVariables(site, component) %>
 
 	return (
@@ -27,15 +27,14 @@ const numberInput: Component = {
 	type: ComponentType.Common,
     getOptions: [
         { id: "styles", type: "styles", default: { templateId: 'styles', templateParameters: { 
-            alignment: null, formats: [], background: null, backgroundColor: '#fff',
+            alignment: null, formats: [], background: null, backgroundColor: 'rgba(255, 255, 255, 0)',
             marginLeft: 0, marginTop: 0, marginRight: 0, marginBottom: 0, 
             paddingLeft: 0, paddingTop: 0, paddingRight: 0, paddingBottom: 0, 
-            borderStyle: 'none', borderWidth: '1', borderColor: '#fff'
+            borderStyle: 'none', borderWidth: '1', borderColor: 'rgba(255, 255, 255, 0)'
         } } },
         { id: "value", type: "number", default: { templateId: 'number', templateParameters: { number: 0 } } },
         { id: "label", type: "string", default: { templateId: 'text', templateParameters: { text: 'Label text' } } },
     ],
-	getComponent: () => import('./NumberInput'),
 	getTemplate
 };
 

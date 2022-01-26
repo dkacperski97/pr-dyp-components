@@ -3,7 +3,6 @@ import Component, { ComponentType } from '../../types/component';
 const getTemplate = () => `
 import React from 'react';
 import { Button } from '@material-ui/core';
-import { Link as RouterLink } from 'react-router-dom';
 <%- helpers.getVariablesImports(site, component, pathToHooks) %>
 
 const <%- helpers.getComponentName(component) %>: React.FC<any> = (props) => {
@@ -13,8 +12,8 @@ const <%- helpers.getComponentName(component) %>: React.FC<any> = (props) => {
 		<Button 
 			className={<%- helpers.getOption(site, component, 'styles') %>}
 			variant="contained"
-			component={RouterLink} 
-			to={<%- helpers.getOption(site, component, 'url') %>}
+			target="_blank"
+			href={<%- helpers.getOption(site, component, 'url') %>}
 		>
 			{<%- helpers.getOption(site, component, 'value') %>}
 		</Button>
@@ -24,8 +23,8 @@ const <%- helpers.getComponentName(component) %>: React.FC<any> = (props) => {
 export default <%- helpers.getComponentName(component) %>;
 `
 
-const link: Component = {
-	id: 'link',
+const externalLink: Component = {
+	id: 'externalLink',
 	type: ComponentType.Common,
 	getOptions: [
 		{ id: "styles", type: "styles", default: { templateId: 'styles', templateParameters: { 
@@ -35,9 +34,9 @@ const link: Component = {
             borderStyle: 'none', borderWidth: '1', borderColor: 'rgba(255, 255, 255, 0)'
         } } },
 		{ id: "value", type: "string", default: { templateId: 'text', templateParameters: { text: 'Link text' } } },
-		{ id: "url", type: "string", default: { templateId: 'route', templateParameters: { page: '' } } },
+		{ id: "url", type: "string", default: { templateId: 'text', templateParameters: { text: 'https://reactjs.org/' } } },
 	],
 	getTemplate
 };
 
-export default link;
+export default externalLink;
